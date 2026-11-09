@@ -66,21 +66,21 @@ TYPOGRAPHY = {
     "body": 13,
     "caption": 11,
     "metric": 26,
-    "render_font": "Segoe UI",
-    "render_size": 15,
+    "render_font": "Arial",
+    "render_size": 22,
 }
 
 DEFAULT_RENDER = {
     "style_key": "sent_blue",
     "theme": "light",
-    "font": "Segoe UI",
-    "font_size": 15,
-    "max_width": 420,
+    "font": "Arial",
+    "font_size": 22,
+    "max_width": 700,
     "alignment": "left",
     "transparent": True,
     "scale": 1,
-    "padding_x": 12,
-    "padding_y": 8,
+    "padding_x": 8,
+    "padding_y": 5,
     "thumbnail_fit": "off",
 }
 
@@ -93,6 +93,10 @@ THUMBNAIL_FITS = [
 THUMBNAIL_RATIOS = {"off": 0.0, "wide": 1.91, "square": 1.0}
 
 RENDER_FONTS = ["Segoe UI", "Arial", "Calibri", "Verdana", "Tahoma", "Georgia"]
+
+# Resolution order used by the reference renderer when a font is missing:
+# arial.ttf -> segoeui.ttf -> calibri.ttf -> PIL's built-in default.
+RENDER_FONT_FALLBACKS = ["Arial", "Segoe UI", "Calibri"]
 
 
 @dataclass(frozen=True)

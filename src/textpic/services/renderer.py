@@ -24,6 +24,11 @@ MAX_TEXT_LENGTH = 2000
 LINE_HEIGHT_FACTOR = 1.3
 BUBBLE_RADIUS = 18
 
+# The reference renderer draws at 3x and averages back down to 1x, which is
+# what makes its text look sharp at the message's own pixel size. Downscaling
+# never changes the final dimensions: the output stays scale * logical size.
+SUPERSAMPLE = 3
+
 
 class RenderError(Exception):
     """A user-facing rendering problem."""
@@ -122,13 +127,14 @@ class Renderer:
         font = QFont(config.font)
         font.setPixelSize(font_size)
         font.setWeight(QFont.Weight.Normal)
+        # Same preference order as the reference's load_font(), plus the emoji
+        # fonts so emoji keep rendering as colour glyphs instead of boxes.
         font.setFamilies(
             [
                 config.font,
                 "Segoe UI Emoji",
                 "Segoe UI Symbol",
-                "Segoe UI",
-                "Arial",
+                *tokens.RENDER_FONT_FALLBACKS,
             ]
         )
 
@@ -181,10 +187,13 @@ class Renderer:
         content_height = text_height + pad_y * 2
         pixel_width = max(1, int(math.ceil(content_width * scale)))
         pixel_height = max(1, int(math.ceil(content_height * scale)))
+        render_scale = scale * SUPERSAMPLE
+        hi_width = max(1, int(math.ceil(content_width * render_scale)))
+        hi_height = max(1, int(math.ceil(content_height * render_scale)))
 
         image = QImage(
-            pixel_width,
-            pixel_height,
+            hi_width,
+            hi_height,
             QImage.Format.Format_ARGB32_Premultiplied,
         )
         image.fill(Qt.GlobalColor.transparent)
@@ -193,7 +202,7 @@ class Renderer:
             painter.setRenderHint(QPainter.RenderHint.Antialiasing, True)
             painter.setRenderHint(QPainter.RenderHint.TextAntialiasing, True)
             painter.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform, True)
-            painter.scale(scale, scale)
+            painter.scale(render_scale, render_scale)
             if not config.transparent:
                 painter.fillRect(
                     QRectF(0, 0, content_width, content_height),
@@ -220,6 +229,14 @@ class Renderer:
             )
         finally:
             painter.end()
+
+        if image.width() != pixel_width or image.height() != pixel_height:
+            image = image.scaled(
+                pixel_width,
+                pixel_height,
+                Qt.AspectRatioMode.IgnoreAspectRatio,
+                Qt.TransformationMode.SmoothTransformation,
+            )
 
         if preset.plain and config.transparent:
             image = self._trim_transparent(image)

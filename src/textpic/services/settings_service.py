@@ -44,7 +44,7 @@ DEFAULT_SETTINGS: dict[str, Any] = {
 RETENTION_OPTIONS = [30, 90, 365, 0]
 
 # Bump when a stored default has to be rewritten for an existing install.
-SETTINGS_VERSION = 2
+SETTINGS_VERSION = 4
 
 
 class SettingsService:
@@ -55,7 +55,7 @@ class SettingsService:
         self._migrate()
 
     def _migrate(self) -> None:
-        """Renders now match the typed message size instead of a 2x matte image."""
+        """Move saved renders off the old padded 2x canvas onto typed-message size."""
         try:
             stored = int(self.get("settings_version"))
         except (TypeError, ValueError):
@@ -69,6 +69,9 @@ class SettingsService:
             self.set("scale", 1.0)
         if str(self.get("thumbnail_fit")) in {"", "wide"}:
             self.set("thumbnail_fit", tokens.DEFAULT_RENDER["thumbnail_fit"])
+        # Adopt the reference tool's metrics: Arial 22 px, 8/5 padding, 700 wrap.
+        for key in ("font", "font_size", "max_width", "padding_x", "padding_y"):
+            self.set(key, tokens.DEFAULT_RENDER[key])
         self.set("settings_version", SETTINGS_VERSION)
 
     def reload(self) -> None:
