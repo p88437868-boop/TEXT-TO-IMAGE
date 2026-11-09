@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Directory Id="dir_2f509b15f652" Name="_internal">
+        <Directory Id="dir_af142fe53d2e" Name="assets">
+          <Directory Id="dir_d9e1364abb8b" Name="fonts" />
+          <Directory Id="dir_12e6acb580ce" Name="icons" />
+          <Directory Id="dir_cfc2d0d684cf" Name="sounds" />
+          <Directory Id="dir_3ca9446415f0" Name="ui" />
+        </Directory>
+        <Directory Id="dir_fcc78b2892e8" Name="PySide6">
+          <Directory Id="dir_46325b715b9b" Name="plugins">
+            <Directory Id="dir_b7b60d7e6e59" Name="generic" />
+            <Directory Id="dir_08d549d513cc" Name="iconengines" />
+            <Directory Id="dir_68e8229e82df" Name="imageformats" />
+            <Directory Id="dir_86f7ac369583" Name="networkinformation" />
+            <Directory Id="dir_e7b7e9ce7266" Name="platforminputcontexts" />
+            <Directory Id="dir_96a6cf71f37d" Name="platforms" />
+            <Directory Id="dir_07d97899a4f0" Name="styles" />
+            <Directory Id="dir_d5e7bcf27068" Name="tls" />
+          </Directory>
+          <Directory Id="dir_d4b4f7df41ed" Name="translations" />
+        </Directory>
+        <Directory Id="dir_d23499fdb7f3" Name="shiboken6" />
+      </Directory>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="AppFiles">
+      <Component Id="cmp_a73d4b1738e2" Directory="dir_2f509b15f652" Guid="{F7AB6265-7B16-5262-BE49-A0F6AEB04D0E}">
+        <File Id="fil_a73d4b1738e2" Source="$(var.DistDir)\_internal\_bz2.pyd" />
+      </Component>
+      <Component Id="cmp_becec890f469" Directory="dir_2f509b15f652" Guid="{6F7C0048-37E7-5512-8312-83EEF59D7AA6}">
+        <File Id="fil_becec890f469" Source="$(var.DistDir)\_internal\_ctypes.pyd" />
+      </Component>
+      <Component Id="cmp_ac34c2230172" Directory="dir_2f509b15f652" Guid="{F75976CD-85F0-5EEF-8465-CDC81121B8BA}">
+        <File Id="fil_ac34c2230172" Source="$(var.DistDir)\_internal\_decimal.pyd" />
+      </Component>
+      <Component Id="cmp_dfef526d4c0e" Directory="dir_2f509b15f652" Guid="{F595FE99-5A1B-5716-BA17-BA28A11E6758}">
+        <File Id="fil_dfef526d4c0e" Source="$(var.DistDir)\_internal\_hashlib.pyd" />
+      </Component>
+      <Component Id="cmp_eca73ae53b35" Directory="dir_2f509b15f652" Guid="{9469549F-9A57-5B24-8C6F-7ACE0F6965BE}">
+        <File Id="fil_eca73ae53b35" Source="$(var.DistDir)\_internal\_lzma.pyd" />
+      </Component>
+      <Component Id="cmp_7bb6178d5a74" Directory="dir_2f509b15f652" Guid="{AB35FC45-1B45-597E-99C0-09623ECCC559}">
+        <File Id="fil_7bb6178d5a74" Source="$(var.DistDir)\_internal\_queue.pyd" />
+      </Component>
+      <Component Id="cmp_bfaa48cf877c" Directory="dir_2f509b15f652" Guid="{6A63CA20-C91F-5623-A760-AE2A08AB25E2}">
+        <File Id="fil_bfaa48cf877c" Source="$(var.DistDir)\_internal\_socket.pyd" />
+      </Component>
+      <Component Id="cmp_402b84bda28e" Directory="dir_2f509b15f652" Guid="{02F1D07A-A0E8-5EE0-A714-6D0B6DEF84FD}">
+        <File Id="fil_402b84bda28e" Source="$(var.DistDir)\_internal\_sqlite3.pyd" />
+      </Component>
+      <Component Id="cmp_dd4c5f62513c" Directory="dir_2f509b15f652" Guid="{95AE9BEC-5817-57F6-858D-C1F73EC09F7B}">
+        <File Id="fil_dd4c5f62513c" Source="$(var.DistDir)\_internal\_ssl.pyd" />
+      </Component>
+      <Component Id="cmp_96c6f8f5c0f3" Directory="dir_2f509b15f652" Guid="{20C062CF-0A32-5FF3-B70F-BF2025EFC2D0}">
+        <File Id="fil_96c6f8f5c0f3" Source="$(var.DistDir)\_internal\_uuid.pyd" />
+      </Component>
+      <Component Id="cmp_afe78c47d983" Directory="dir_2f509b15f652" Guid="{FC4E964F-6942-5189-8CBC-40E6732B3D3D}">
+        <File Id="fil_afe78c47d983" Source="$(var.DistDir)\_internal\_wmi.pyd" />
+      </Component>
+      <Component Id="cmp_5673f0fc09b4" Directory="dir_af142fe53d2e" Guid="{C5143027-EFF1-572E-9BD1-3923DDB2EFAD}">
+        <File Id="fil_5673f0fc09b4" Source="$(var.DistDir)\_internal\assets\app.ico" />
+      </Component>
+      <Component Id="cmp_96d96e204c24" Directory="dir_af142fe53d2e" Guid="{4B4838FD-D182-53D2-8A82-9FF044BFD6A2}">
+        <File Id="fil_96d96e204c24" Source="$(var.DistDir)\_internal\assets\brand.png" />
+      </Component>
+      <Component Id="cmp_b558c20f2619" Directory="dir_af142fe53d2e" Guid="{24740614-70AB-5952-80D4-E0CA4B8560F4}">
+        <File Id="fil_b558c20f2619" Source="$(var.DistDir)\_internal\assets\checker.png" />
+      </Component>
+      <Component Id="cmp_959f58d49f3c" Directory="dir_d9e1364abb8b" Guid="{D864DC3A-A07D-5C41-A9D9-C5C994E750D4}">
+        <File Id="fil_959f58d49f3c" Source="$(var.DistDir)\_internal\assets\fonts\Inter-Variable.ttf" />
+      </Component>
+      <Component Id="cmp_e3411cd33861" Directory="dir_d9e1364abb8b" Guid="{E3819005-F96D-55C3-86EB-544790F7D72C}">
+        <File Id="fil_e3411cd33861" Source="$(var.DistDir)\_internal\assets\fonts\OFL.txt" />
+      </Component>
+      <Component Id="cmp_e770ba8172e3" Directory="dir_12e6acb580ce" Guid="{4A1AEF8A-B2F9-5830-B0F0-6594EDCF8023}">
+        <File Id="fil_e770ba8172e3" Source="$(var.DistDir)\_internal\assets\icons\alert.svg" />
+      </Component>
+      <Component Id="cmp_38fd796cc81a" Directory="dir_12e6acb580ce" Guid="{4C8A4FBA-864D-5E6F-9F40-4D9BA1563C0F}">
+        <File Id="fil_38fd796cc81a" Source="$(var.DistDir)\_internal\assets\icons\analytics.svg" />
+      </Component>
+      <Component Id="cmp_cb8e2d98c486" Directory="dir_12e6acb580ce" Guid="{CCF71EC0-17D9-5CD2-AC6E-32D90112C4A8}">
+        <File Id="fil_cb8e2d98c486" Source="$(var.DistDir)\_internal\assets\icons\bell.svg" />
+      </Component>
+      <Component Id="cmp_78fd64a987c1" Directory="dir_12e6acb580ce" Guid="{375F1668-B6CA-5059-BDC4-EA60370A8215}">
+        <File Id="fil_78fd64a987c1" Source="$(var.DistDir)\_internal\assets\icons\calendar.svg" />
+      </Component>
+      <Component Id="cmp_038ab05688c4" Directory="dir_12e6acb580ce" Guid="{3807EE17-D4B4-5911-A566-2536353EAA59}">
+        <File Id="fil_038ab05688c4" Source="$(var.DistDir)\_internal\assets\icons\check.svg" />
+      </Component>
+      <Component Id="cmp_054bebac14d6" Directory="dir_12e6acb580ce" Guid="{67131934-E9FF-50D3-A31E-2B4A60365392}">
+        <File Id="fil_054bebac14d6" Source="$(var.DistDir)\_internal\assets\icons\clock.svg" />
+      </Component>
+      <Component Id="cmp_0fbfd8c8e260" Directory="dir_12e6acb580ce" Guid="{96445AF1-FFCD-52CE-82F4-4085714430F0}">
+        <File Id="fil_0fbfd8c8e260" Source="$(var.DistDir)\_internal\assets\icons\close.svg" />
+      </Component>
+      <Component Id="cmp_19680a627685" Directory="dir_12e6acb580ce" Guid="{6D112A8E-B52E-5870-BEF8-5626D52FD943}">
+        <File Id="fil_19680a627685" Source="$(var.DistDir)\_internal\assets\icons\compose.svg" />
+      </Component>
+      <Component Id="cmp_2c7bdf2aa9b7" Directory="dir_12e6acb580ce" Guid="{44585C62-3404-541B-BF19-0BBF47A629C0}">
+        <File Id="fil_2c7bdf2aa9b7" Source="$(var.DistDir)\_internal\assets\icons\copy.svg" />
+      </Component>
+      <Component Id="cmp_b10530da2029" Directory="dir_12e6acb580ce" Guid="{5724A334-F632-5D30-9A08-7E43BF4C5804}">
+        <File Id="fil_b10530da2029" Source="$(var.DistDir)\_internal\assets\icons\dashboard.svg" />
+      </Component>
+      <Component Id="cmp_aaf73866bace" Directory="dir_12e6acb580ce" Guid="{1DFDF845-16FC-56E7-94BB-2922DF480C9F}">
+        <File Id="fil_aaf73866bace" Source="$(var.DistDir)\_internal\assets\icons\database.svg" />
+      </Component>
+      <Component Id="cmp_75fd55174eff" Directory="dir_12e6acb580ce" Guid="{BACD001E-2377-5FC3-8448-1223947BACCD}">
+        <File Id="fil_75fd55174eff" Source="$(var.DistDir)\_internal\assets\icons\download.svg" />
+      </Component>
+      <Component Id="cmp_3ec15257f81a" Directory="dir_12e6acb580ce" Guid="{876F2780-1A75-5518-9839-FD27516C0359}">
+        <File Id="fil_3ec15257f81a" Source="$(var.DistDir)\_internal\assets\icons\edit.svg" />
+      </Component>
+      <Component Id="cmp_3408175ec8fb" Directory="dir_12e6acb580ce" Guid="{13F9E7A4-E791-5920-9ABB-DAFC127F0A18}">
+        <File Id="fil_3408175ec8fb" Source="$(var.DistDir)\_internal\assets\icons\export.svg" />
+      </Component>
+      <Component Id="cmp_183b840ca572" Directory="dir_12e6acb580ce" Guid="{E69482A2-9768-59DC-96F0-65DC39B6A480}">
+        <File Id="fil_183b840ca572" Source="$(var.DistDir)\_internal\assets\icons\external.svg" />
+      </Component>
+      <Component Id="cmp_382778b9471e" Directory="dir_12e6acb580ce" Guid="{67A9B53F-87C7-541A-BF4E-AA35EB14881C}">
+        <File Id="fil_382778b9471e" Source="$(var.DistDir)\_internal\assets\icons\flame.svg" />
+      </Component>
+      <Component Id="cmp_321445b89705" Directory="dir_12e6acb580ce" Guid="{32D802E2-F238-5010-9B4B-5F19E5B00126}">
+        <File Id="fil_321445b89705" Source="$(var.DistDir)\_internal\assets\icons\folder.svg" />
+      </Component>
+      <Component Id="cmp_bef4834561f9" Directory="dir_12e6acb580ce" Guid="{5ECDB0AF-A683-5E55-B2EE-21CF1A6EDA7C}">
+        <File Id="fil_bef4834561f9" Source="$(var.DistDir)\_internal\assets\icons\help.svg" />
+      </Component>
+      <Component Id="cmp_b4daa74cd0cb" Directory="dir_12e6acb580ce" Guid="{CF84123A-B704-50A0-9A71-AB65AC254BAE}">
+        <File Id="fil_b4daa74cd0cb" Source="$(var.DistDir)\_internal\assets\icons\history.svg" />
+      </Component>
+      <Component Id="cmp_738e5dce4edf" Directory="dir_12e6acb580ce" Guid="{0BF1B65D-C580-54CB-9A92-EC24D4E2B32E}">
+        <File Id="fil_738e5dce4edf" Source="$(var.DistDir)\_internal\assets\icons\image.svg" />
+      </Component>
+      <Component Id="cmp_4f26063cdafd" Directory="dir_12e6acb580ce" Guid="{1BE4CD85-6EF1-597D-BEB4-F525897274AD}">
+        <File Id="fil_4f26063cdafd" Source="$(var.DistDir)\_internal\assets\icons\info.svg" />
+      </Component>
+      <Component Id="cmp_962f8080f4cf" Directory="dir_12e6acb580ce" Guid="{93C33968-9FD5-5AA3-9EA4-D011AD86A2B1}">
+        <File Id="fil_962f8080f4cf" Source="$(var.DistDir)\_internal\assets\icons\keyboard.svg" />
+      </Component>
+      <Component Id="cmp_cddb06cd1470" Directory="dir_12e6acb580ce" Guid="{3142DD0C-6AE1-5113-AA8B-E6522E0D7AA8}">
+        <File Id="fil_cddb06cd1470" Source="$(var.DistDir)\_internal\assets\icons\layers.svg" />
+      </Component>
+      <Component Id="cmp_584c925afa44" Directory="dir_12e6acb580ce" Guid="{5ACBAC8E-9AEB-5B4D-B08D-6238F647F332}">
+        <File Id="fil_584c925afa44" Source="$(var.DistDir)\_internal\assets\icons\layout.svg" />
+      </Component>
+      <Component Id="cmp_57b7549b9b77" Directory="dir_12e6acb580ce" Guid="{4332FDC5-AB8E-5EFC-8A8F-51B68D66B1A9}">
+        <File Id="fil_57b7549b9b77" Source="$(var.DistDir)\_internal\assets\icons\maximize.svg" />
+      </Component>
+      <Component Id="cmp_1d7dbfd0d732" Directory="dir_12e6acb580ce" Guid="{D97C44CB-7C71-5CFE-9E3D-B3D29A58707F}">
+        <File Id="fil_1d7dbfd0d732" Source="$(var.DistDir)\_internal\assets\icons\minimize.svg" />
+      </Component>
+      <Component Id="cmp_18ba16f20f52" Directory="dir_12e6acb580ce" Guid="{C4193E1C-68AC-5BED-9D2B-CE34EE9A897E}">
+        <File Id="fil_18ba16f20f52" Source="$(var.DistDir)\_internal\assets\icons\palette.svg" />
+      </Component>
+      <Component Id="cmp_aa955cd07809" Directory="dir_12e6acb580ce" Guid="{ACA5D296-F948-55DD-8F9E-8426B298B058}">
+        <File Id="fil_aa955cd07809" Source="$(var.DistDir)\_internal\assets\icons\paste.svg" />
+      </Component>
+      <Component Id="cmp_d1683a29c7ae" Directory="dir_12e6acb580ce" Guid="{4C75CD5E-CCA7-5C12-A2B6-DECECB2DE487}">
+        <File Id="fil_d1683a29c7ae" Source="$(var.DistDir)\_internal\assets\icons\pin.svg" />
+      </Component>
+      <Component Id="cmp_6cfd0988e060" Directory="dir_12e6acb580ce" Guid="{E45C879C-F2E2-53E0-BAEF-DE65F5C8F9CD}">
+        <File Id="fil_6cfd0988e060" Source="$(var.DistDir)\_internal\assets\icons\play.svg" />
+      </Component>
+      <Component Id="cmp_41798691bdd3" Directory="dir_12e6acb580ce" Guid="{4C018A59-F31F-57F3-B93B-542CE7F3BB2F}">
+        <File Id="fil_41798691bdd3" Source="$(var.DistDir)\_internal\assets\icons\plus.svg" />
+      </Component>
+      <Component Id="cmp_56fe1e729e81" Directory="dir_12e6acb580ce" Guid="{B46DE075-6F13-5295-AF83-96D83FC2C90E}">
+        <File Id="fil_56fe1e729e81" Source="$(var.DistDir)\_internal\assets\icons\refresh.svg" />
+      </Component>
+      <Component Id="cmp_e58c3d9af28a" Directory="dir_12e6acb580ce" Guid="{BA1DD52B-DD84-5B41-8E38-3E64DAD5B0DF}">
+        <File Id="fil_e58c3d9af28a" Source="$(var.DistDir)\_internal\assets\icons\restore.svg" />
+      </Component>
+      <Component Id="cmp_3aa11b10c379" Directory="dir_12e6acb580ce" Guid="{3F7033BC-37BD-5871-A76E-597FED0F89A8}">
+        <File Id="fil_3aa11b10c379" Source="$(var.DistDir)\_internal\assets\icons\save.svg" />
+      </Component>
+      <Component Id="cmp_e519aea6eeaa" Directory="dir_12e6acb580ce" Guid="{8BE0A064-FA4B-5D5E-BF40-5A66AB8C4025}">
+        <File Id="fil_e519aea6eeaa" Source="$(var.DistDir)\_internal\assets\icons\search.svg" />
+      </Component>
+      <Component Id="cmp_676cce809db2" Directory="dir_12e6acb580ce" Guid="{52B4BCD0-C583-5C61-A072-F2058A107AA1}">
+        <File Id="fil_676cce809db2" Source="$(var.DistDir)\_internal\assets\icons\settings.svg" />
+      </Component>
+      <Component Id="cmp_47317f15f4c2" Directory="dir_12e6acb580ce" Guid="{60BBC388-63E0-5844-9E22-836A72CE3C83}">
+        <File Id="fil_47317f15f4c2" Source="$(var.DistDir)\_internal\assets\icons\shield.svg" />
+      </Component>
+      <Component Id="cmp_29663d182570" Directory="dir_12e6acb580ce" Guid="{62777CAB-C365-554B-BB8A-701CF7928972}">
+        <File Id="fil_29663d182570" Source="$(var.DistDir)\_internal\assets\icons\sliders.svg" />
+      </Component>
+      <Component Id="cmp_ddba52aed0e6" Directory="dir_12e6acb580ce" Guid="{D748D42F-6BEC-5BC8-8D6C-A79807ACEE53}">
+        <File Id="fil_ddba52aed0e6" Source="$(var.DistDir)\_internal\assets\icons\sparkles.svg" />
+      </Component>
+      <Component Id="cmp_0b828b777f61" Directory="dir_12e6acb580ce" Guid="{ED4AA4D9-D0B5-553C-AA1F-FDD7823E52AB}">
+        <File Id="fil_0b828b777f61" Source="$(var.DistDir)\_internal\assets\icons\templates.svg" />
+      </Component>
+      <Component Id="cmp_3e5c356a926a" Directory="dir_12e6acb580ce" Guid="{8A670CEF-0BEA-51B2-92A3-C325EE0E2A23}">
+        <File Id="fil_3e5c356a926a" Source="$(var.DistDir)\_internal\assets\icons\trash.svg" />
+      </Component>
+      <Component Id="cmp_081b82f1d577" Directory="dir_12e6acb580ce" Guid="{C4FD2CB8-565F-5160-AC4B-E93BFE73565D}">
+        <File Id="fil_081b82f1d577" Source="$(var.DistDir)\_internal\assets\icons\type.svg" />
+      </Component>
+      <Component Id="cmp_650cb02372f1" Directory="dir_12e6acb580ce" Guid="{0EFC7088-2CA1-5FDC-AAC9-AD6940D34897}">
+        <File Id="fil_650cb02372f1" Source="$(var.DistDir)\_internal\assets\icons\upload.svg" />
+      </Component>
+      <Component Id="cmp_bba62389415a" Directory="dir_12e6acb580ce" Guid="{0840ED38-FA85-5EE0-B799-59AFA058B7CF}">
+        <File Id="fil_bba62389415a" Source="$(var.DistDir)\_internal\assets\icons\user.svg" />
+      </Component>
+      <Component Id="cmp_45ea3513aeeb" Directory="dir_12e6acb580ce" Guid="{50BC270E-8C18-584E-AD1E-16C7B0AB65B7}">
+        <File Id="fil_45ea3513aeeb" Source="$(var.DistDir)\_internal\assets\icons\zap.svg" />
+      </Component>
+      <Component Id="cmp_59a096823c18" Directory="dir_af142fe53d2e" Guid="{31BE6F0B-9E4B-5DA4-ACEC-7D3F8CB536BD}">
+        <File Id="fil_59a096823c18" Source="$(var.DistDir)\_internal\assets\logo.png" />
+      </Component>
+      <Component Id="cmp_36a9716701a5" Directory="dir_af142fe53d2e" Guid="{4B0AFACB-27C8-59B1-A74D-21C740D5ED3E}">
+        <File Id="fil_36a9716701a5" Source="$(var.DistDir)\_internal\assets\logo.svg" />
+      </Component>
+      <Component Id="cmp_37e14fcfa25e" Directory="dir_cfc2d0d684cf" Guid="{14582E8A-5646-5C68-A3B6-1E2EAA887B97}">
+        <File Id="fil_37e14fcfa25e" Source="$(var.DistDir)\_internal\assets\sounds\click.wav" />
+      </Component>
+      <Component Id="cmp_60cfd4397c1a" Directory="dir_af142fe53d2e" Guid="{1D1D7F32-EBA7-5D28-96BB-D2E55F1CF78D}">
+        <File Id="fil_60cfd4397c1a" Source="$(var.DistDir)\_internal\assets\tray.ico" />
+      </Component>
+      <Component Id="cmp_f213ac5b5de6" Directory="dir_3ca9446415f0" Guid="{EDE98D91-D00D-5C55-BA87-72283053EBDF}">
+        <File Id="fil_f213ac5b5de6" Source="$(var.DistDir)\_internal\assets\ui\check_on.svg" />
+      </Component>
+      <Component Id="cmp_4346109514eb" Directory="dir_3ca9446415f0" Guid="{C7BDF8C5-7E38-5676-B5EB-79AD01D957E8}">
+        <File Id="fil_4346109514eb" Source="$(var.DistDir)\_internal\assets\ui\chevron_down.svg" />
+      </Component>
+      <Component Id="cmp_256c47a1c002" Directory="dir_3ca9446415f0" Guid="{B3DDEC8F-34C1-572D-BA99-2FEDBE59EA02}">
+        <File Id="fil_256c47a1c002" Source="$(var.DistDir)\_internal\assets\ui\chevron_up.svg" />
+      </Component>
+      <Component Id="cmp_a6b99728b85f" Directory="dir_2f509b15f652" Guid="{8640AEF6-E133-518D-B7EF-3022CFD2AB1F}">
+        <File Id="fil_a6b99728b85f" Source="$(var.DistDir)\_internal\base_library.zip" />
+      </Component>
+      <Component Id="cmp_012fb12761ea" Directory="dir_2f509b15f652" Guid="{384C5D95-A655-5014-9A0F-9F36FA197F8F}">
+        <File Id="fil_012fb12761ea" Source="$(var.DistDir)\_internal\libcrypto-3-x64.dll" />
+      </Component>
+      <Component Id="cmp_38f536138aab" Directory="dir_2f509b15f652" Guid="{880DADA8-C94D-53F0-B198-CCD853638B6A}">
+        <File Id="fil_38f536138aab" Source="$(var.DistDir)\_internal\libffi-8.dll" />
+      </Component>
+      <Component Id="cmp_de8d14b0bd3a" Directory="dir_2f509b15f652" Guid="{0E19A9F5-B8C8-5DBA-AD65-7FCF764CE7E3}">
+        <File Id="fil_de8d14b0bd3a" Source="$(var.DistDir)\_internal\libssl-3-x64.dll" />
+      </Component>
+      <Component Id="cmp_74e40d0627ee" Directory="dir_fcc78b2892e8" Guid="{71E8EC35-CD52-5B0D-8650-E7FBBC690E9C}">
+        <File Id="fil_74e40d0627ee" Source="$(var.DistDir)\_internal\PySide6\MSVCP140.dll" />
+      </Component>
+      <Component Id="cmp_471d1c10daec" Directory="dir_fcc78b2892e8" Guid="{A87B6298-6C78-5BE7-B6A6-B010F4388D5C}">
+        <File Id="fil_471d1c10daec" Source="$(var.DistDir)\_internal\PySide6\MSVCP140_1.dll" />
+      </Component>
+      <Component Id="cmp_d0c0595d5b8c" Directory="dir_fcc78b2892e8" Guid="{491875A9-ED73-5403-B8CD-78597C1D90BA}">
+        <File Id="fil_d0c0595d5b8c" Source="$(var.DistDir)\_internal\PySide6\MSVCP140_2.dll" />
+      </Component>
+      <Component Id="cmp_b90040c5de0e" Directory="dir_fcc78b2892e8" Guid="{C080E5F7-EE85-5626-8E86-C3F5234CB2C2}">
+        <File Id="fil_b90040c5de0e" Source="$(var.DistDir)\_internal\PySide6\opengl32sw.dll" />
+      </Component>
+      <Component Id="cmp_100f6ced167e" Directory="dir_b7b60d7e6e59" Guid="{42AE3AA8-5BC2-54DB-86DF-1C74E3417061}">
+        <File Id="fil_100f6ced167e" Source="$(var.DistDir)\_internal\PySide6\plugins\generic\qtuiotouchplugin.dll" />
+      </Component>
+      <Component Id="cmp_7df76fb4bdb9" Directory="dir_08d549d513cc" Guid="{5FA93BFF-CE8D-506E-A6F5-8ADE99DAF3E6}">
+        <File Id="fil_7df76fb4bdb9" Source="$(var.DistDir)\_internal\PySide6\plugins\iconengines\qsvgicon.dll" />
+      </Component>
+      <Component Id="cmp_751c5764e834" Directory="dir_68e8229e82df" Guid="{62FF9298-CDF9-542F-8C61-8887798A5FF4}">
+        <File Id="fil_751c5764e834" Source="$(var.DistDir)\_internal\PySide6\plugins\imageformats\qgif.dll" />
+      </Component>
+      <Component Id="cmp_b6273f4d6d20" Directory="dir_68e8229e82df" Guid="{64AD69CF-A106-5F5C-81B6-F6CBC3BFE3B1}">
+        <File Id="fil_b6273f4d6d20" Source="$(var.DistDir)\_internal\PySide6\plugins\imageformats\qicns.dll" />
+      </Component>
+      <Component Id="cmp_caf9316ae27c" Directory="dir_68e8229e82df" Guid="{F9B0CD45-D501-5BB3-ABF0-2257CF784CC1}">
+        <File Id="fil_caf9316ae27c" Source="$(var.DistDir)\_internal\PySide6\plugins\imageformats\qico.dll" />
+      </Component>
+      <Component Id="cmp_93ce437d3963" Directory="dir_68e8229e82df" Guid="{9BF9926A-A54D-5B87-AA43-6E299E7DC9DC}">
+        <File Id="fil_93ce437d3963" Source="$(var.DistDir)\_internal\PySide6\plugins\imageformats\qjpeg.dll" />
+      </Component>
+      <Component Id="cmp_ca93fd3c1a55" Directory="dir_68e8229e82df" Guid="{D52AB27E-496B-5C39-B86C-30116F5E9CB3}">
+        <File Id="fil_ca93fd3c1a55" Source="$(var.DistDir)\_internal\PySide6\plugins\imageformats\qpdf.dll" />
+      </Component>
+      <Component Id="cmp_5c54b4610ed8" Directory="dir_68e8229e82df" Guid="{D5FC505A-90B3-5C8E-974E-724956041423}">
+        <File Id="fil_5c54b4610ed8" Source="$(var.DistDir)\_internal\PySide6\plugins\imageformats\qsvg.dll" />
+      </Component>
+      <Component Id="cmp_6c6d77b4533f" Directory="dir_68e8229e82df" Guid="{2A88BFA6-C110-5958-88E6-7EF3FDD1E48F}">
+        <File Id="fil_6c6d77b4533f" Source="$(var.DistDir)\_internal\PySide6\plugins\imageformats\qtga.dll" />
+      </Component>
+      <Component Id="cmp_2fb4b73c43c5" Directory="dir_68e8229e82df" Guid="{E226845B-BB24-5CE3-9FE2-F58889C01825}">
+        <File Id="fil_2fb4b73c43c5" Source="$(var.DistDir)\_internal\PySide6\plugins\imageformats\qtiff.dll" />
+      </Component>
+      <Component Id="cmp_4f5a867c6df5" Directory="dir_68e8229e82df" Guid="{6E11EFE3-FFAD-58B3-8774-1F3831EBB267}">
+        <File Id="fil_4f5a867c6df5" Source="$(var.DistDir)\_internal\PySide6\plugins\imageformats\qwbmp.dll" />
+      </Component>
+      <Component Id="cmp_6bdc1b2dc40f" Directory="dir_68e8229e82df" Guid="{E0CCC901-EBD6-5304-B1F7-4686F5E9B107}">
+        <File Id="fil_6bdc1b2dc40f" Source="$(var.DistDir)\_internal\PySide6\plugins\imageformats\qwebp.dll" />
+      </Component>
+      <Component Id="cmp_1d8c08755554" Directory="dir_86f7ac369583" Guid="{C1C0CE14-4C0E-5C23-8C94-D33C69903109}">
+        <File Id="fil_1d8c08755554" Source="$(var.DistDir)\_internal\PySide6\plugins\networkinformation\qnetworklistmanager.dll" />
+      </Component>
+      <Component Id="cmp_fe203a678b38" Directory="dir_e7b7e9ce7266" Guid="{E2301C65-DEF3-5359-9143-368FCB82A766}">
+        <File Id="fil_fe203a678b38" Source="$(var.DistDir)\_internal\PySide6\plugins\platforminputcontexts\qtvirtualkeyboardplugin.dll" />
+      </Component>
+      <Component Id="cmp_7e92c669cd37" Directory="dir_96a6cf71f37d" Guid="{A565C65E-2793-5FF9-A96F-2A088E363352}">
+        <File Id="fil_7e92c669cd37" Source="$(var.DistDir)\_internal\PySide6\plugins\platforms\qdirect2d.dll" />
+      </Component>
+      <Component Id="cmp_887f84860e31" Directory="dir_96a6cf71f37d" Guid="{196C34ED-F937-5C2B-AD0F-5CD303523B77}">
+        <File Id="fil_887f84860e31" Source="$(var.DistDir)\_internal\PySide6\plugins\platforms\qminimal.dll" />
+      </Component>
+      <Component Id="cmp_b17e2be0096e" Directory="dir_96a6cf71f37d" Guid="{29EAE1BB-96A6-5D84-BCD8-AC32E7DEB9EE}">
+        <File Id="fil_b17e2be0096e" Source="$(var.DistDir)\_internal\PySide6\plugins\platforms\qoffscreen.dll" />
+      </Component>
+      <Component Id="cmp_794ec57e5432" Directory="dir_96a6cf71f37d" Guid="{7968D362-CC3D-5D3C-A2CE-0C77116D6F96}">
+        <File Id="fil_794ec57e5432" Source="$(var.DistDir)\_internal\PySide6\plugins\platforms\qwindows.dll" />
+      </Component>
+      <Component Id="cmp_b88b779a8a27" Directory="dir_07d97899a4f0" Guid="{0748BBDE-0771-5A19-80F0-F359A1F6021B}">
+        <File Id="fil_b88b779a8a27" Source="$(var.DistDir)\_internal\PySide6\plugins\styles\qmodernwindowsstyle.dll" />
+      </Component>
+      <Component Id="cmp_a7135b6783a6" Directory="dir_d5e7bcf27068" Guid="{7B351AE2-2708-59BE-B1F5-FB320CC6DA4F}">
+        <File Id="fil_a7135b6783a6" Source="$(var.DistDir)\_internal\PySide6\plugins\tls\qcertonlybackend.dll" />
+      </Component>
+      <Component Id="cmp_502ec3ae4b4f" Directory="dir_d5e7bcf27068" Guid="{FC816695-F79A-5927-8100-204ABFDA14B2}">
+        <File Id="fil_502ec3ae4b4f" Source="$(var.DistDir)\_internal\PySide6\plugins\tls\qopensslbackend.dll" />
+      </Component>
+      <Component Id="cmp_00233e200b96" Directory="dir_d5e7bcf27068" Guid="{D2C53E0C-B581-5226-9FBF-544E08835482}">
+        <File Id="fil_00233e200b96" Source="$(var.DistDir)\_internal\PySide6\plugins\tls\qschannelbackend.dll" />
+      </Component>
+      <Component Id="cmp_e3400d5db957" Directory="dir_fcc78b2892e8" Guid="{50A8C97A-F374-55D8-9064-221D00619626}">
+        <File Id="fil_e3400d5db957" Source="$(var.DistDir)\_internal\PySide6\pyside6.abi3.dll" />
+      </Component>
+      <Component Id="cmp_54cc50172c02" Directory="dir_fcc78b2892e8" Guid="{0B059BC8-C378-5D30-81C7-71AC4FD2500C}">
+        <File Id="fil_54cc50172c02" Source="$(var.DistDir)\_internal\PySide6\Qt6Charts.dll" />
+      </Component>
+      <Component Id="cmp_731a3f7ddd12" Directory="dir_fcc78b2892e8" Guid="{C864343F-2420-5A82-B77F-A5EB47F1F8BF}">
+        <File Id="fil_731a3f7ddd12" Source="$(var.DistDir)\_internal\PySide6\Qt6Core.dll" />
+      </Component>
+      <Component Id="cmp_eb18f3b83d5d" Directory="dir_fcc78b2892e8" Guid="{18C84F29-4F6E-5158-A5A5-ECEAFDA4A9B2}">
+        <File Id="fil_eb18f3b83d5d" Source="$(var.DistDir)\_internal\PySide6\Qt6Gui.dll" />
+      </Component>
+      <Component Id="cmp_95f49b24b5e4" Directory="dir_fcc78b2892e8" Guid="{5CE8198E-1097-5A2E-88F6-9AED7B260042}">
+        <File Id="fil_95f49b24b5e4" Source="$(var.DistDir)\_internal\PySide6\Qt6Network.dll" />
+      </Component>
+      <Component Id="cmp_6eb1dc96ae88" Directory="dir_fcc78b2892e8" Guid="{E9CF1EE1-0B20-51BC-8519-C402A95EA9AE}">
+        <File Id="fil_6eb1dc96ae88" Source="$(var.DistDir)\_internal\PySide6\Qt6OpenGL.dll" />
+      </Component>
+      <Component Id="cmp_7e4fdd98edf2" Directory="dir_fcc78b2892e8" Guid="{C1640E72-E608-53A4-9412-0EC91A472BD3}">
+        <File Id="fil_7e4fdd98edf2" Source="$(var.DistDir)\_internal\PySide6\Qt6OpenGLWidgets.dll" />
+      </Component>
+      <Component Id="cmp_0b2e8140b62d" Directory="dir_fcc78b2892e8" Guid="{142A1C3E-8C1E-5E62-9E33-40A04FB5F8BF}">
+        <File Id="fil_0b2e8140b62d" Source="$(var.DistDir)\_internal\PySide6\Qt6Pdf.dll" />
+      </Component>
+      <Component Id="cmp_92a1b95abc53" Directory="dir_fcc78b2892e8" Guid="{06FD8023-CB88-5BB4-9931-EC2CF1F88FA8}">
+        <File Id="fil_92a1b95abc53" Source="$(var.DistDir)\_internal\PySide6\Qt6Qml.dll" />
+      </Component>
+      <Component Id="cmp_7abb8c3e5a7f" Directory="dir_fcc78b2892e8" Guid="{C29EF924-6C89-5ED3-A6EF-7F417A7C48F6}">
+        <File Id="fil_7abb8c3e5a7f" Source="$(var.DistDir)\_internal\PySide6\Qt6QmlMeta.dll" />
+      </Component>
+      <Component Id="cmp_475ef7fbb69b" Directory="dir_fcc78b2892e8" Guid="{D46DEB56-BD86-57B3-B6CC-6872FC9D21B1}">
+        <File Id="fil_475ef7fbb69b" Source="$(var.DistDir)\_internal\PySide6\Qt6QmlModels.dll" />
+      </Component>
+      <Component Id="cmp_35184e095f49" Directory="dir_fcc78b2892e8" Guid="{08DD8817-0954-550C-BB0A-21808DB59163}">
+        <File Id="fil_35184e095f49" Source="$(var.DistDir)\_internal\PySide6\Qt6QmlWorkerScript.dll" />
+      </Component>
+      <Component Id="cmp_27b2cd7c5875" Directory="dir_fcc78b2892e8" Guid="{BFBB8ABF-D407-5217-AD2A-E7121C653EED}">
+        <File Id="fil_27b2cd7c5875" Source="$(var.DistDir)\_internal\PySide6\Qt6Quick.dll" />
+      </Component>
+      <Component Id="cmp_3edb57f172af" Directory="dir_fcc78b2892e8" Guid="{80512030-7865-56F2-B384-1A1BC1B79B13}">
+        <File Id="fil_3edb57f172af" Source="$(var.DistDir)\_internal\PySide6\Qt6Svg.dll" />
+      </Component>
+      <Component Id="cmp_ffe5f2de6797" Directory="dir_fcc78b2892e8" Guid="{326ACEE4-3383-55C5-8A3C-FFD3FD92B85B}">
+        <File Id="fil_ffe5f2de6797" Source="$(var.DistDir)\_internal\PySide6\Qt6VirtualKeyboard.dll" />
+      </Component>
+      <Component Id="cmp_dcd85f10c53a" Directory="dir_fcc78b2892e8" Guid="{8FD54A16-93BA-5C13-959D-D5F78E36F6E9}">
+        <File Id="fil_dcd85f10c53a" Source="$(var.DistDir)\_internal\PySide6\Qt6Widgets.dll" />
+      </Component>
+      <Component Id="cmp_5e5ea1b44511" Directory="dir_fcc78b2892e8" Guid="{BBE49A6A-16FE-5502-9FE0-69BDBFC6E1FC}">
+        <File Id="fil_5e5ea1b44511" Source="$(var.DistDir)\_internal\PySide6\QtCharts.pyd" />
+      </Component>
+      <Component Id="cmp_4656be8e24b4" Directory="dir_fcc78b2892e8" Guid="{10EAAF2F-91E0-5A72-ACBC-A25D8AEF6B7F}">
+        <File Id="fil_4656be8e24b4" Source="$(var.DistDir)\_internal\PySide6\QtCore.pyd" />
+      </Component>
+      <Component Id="cmp_a8a546468721" Directory="dir_fcc78b2892e8" Guid="{9A74A70D-8DA3-5F62-B698-33DE0941B378}">
+        <File Id="fil_a8a546468721" Source="$(var.DistDir)\_internal\PySide6\QtGui.pyd" />
+      </Component>
+      <Component Id="cmp_2601cce76510" Directory="dir_fcc78b2892e8" Guid="{AF0EF17A-60BD-5174-9024-30552A125B44}">
+        <File Id="fil_2601cce76510" Source="$(var.DistDir)\_internal\PySide6\QtNetwork.pyd" />
+      </Component>
+      <Component Id="cmp_27783bd7c1b0" Directory="dir_fcc78b2892e8" Guid="{28127F07-6E50-5929-BCF3-B4C52B650D0F}">
+        <File Id="fil_27783bd7c1b0" Source="$(var.DistDir)\_internal\PySide6\QtOpenGL.pyd" />
+      </Component>
+      <Component Id="cmp_7628d7b684db" Directory="dir_fcc78b2892e8" Guid="{45347119-4276-500E-8AC2-9CD522ECAFE0}">
+        <File Id="fil_7628d7b684db" Source="$(var.DistDir)\_internal\PySide6\QtOpenGLWidgets.pyd" />
+      </Component>
+      <Component Id="cmp_e10422e7542b" Directory="dir_fcc78b2892e8" Guid="{8714E5AC-51B2-57E9-874F-4B23CB222522}">
+        <File Id="fil_e10422e7542b" Source="$(var.DistDir)\_internal\PySide6\QtSvg.pyd" />
+      </Component>
+      <Component Id="cmp_e722a0b3508e" Directory="dir_fcc78b2892e8" Guid="{51F31FA6-F05C-5888-9153-8D3DFAF00E75}">
+        <File Id="fil_e722a0b3508e" Source="$(var.DistDir)\_internal\PySide6\QtWidgets.pyd" />
+      </Component>
+      <Component Id="cmp_7ee3bbf2d25b" Directory="dir_d4b4f7df41ed" Guid="{861252A5-DD96-5A57-A016-C6EE5E667D3B}">
+        <File Id="fil_7ee3bbf2d25b" Source="$(var.DistDir)\_internal\PySide6\translations\qt_ar.qm" />
+      </Component>
+      <Component Id="cmp_8c818963b24f" Directory="dir_d4b4f7df41ed" Guid="{875EF3ED-EC43-5A1A-B95D-38A841C2444E}">
+        <File Id="fil_8c818963b24f" Source="$(var.DistDir)\_internal\PySide6\translations\qt_bg.qm" />
+      </Component>
+      <Component Id="cmp_e3fdda048011" Directory="dir_d4b4f7df41ed" Guid="{578CEA5E-CD0A-5B43-81AC-B159936DB064}">
+        <File Id="fil_e3fdda048011" Source="$(var.DistDir)\_internal\PySide6\translations\qt_ca.qm" />
+      </Component>
+      <Component Id="cmp_03dec8897f89" Directory="dir_d4b4f7df41ed" Guid="{BD3DF7E9-E0DE-58FF-B3B1-B078436844E2}">
+        <File Id="fil_03dec8897f89" Source="$(var.DistDir)\_internal\PySide6\translations\qt_cs.qm" />
+      </Component>
+      <Component Id="cmp_6259035d82d0" Directory="dir_d4b4f7df41ed" Guid="{4DD155D2-0D30-55A4-A995-392F619392F6}">
+        <File Id="fil_6259035d82d0" Source="$(var.DistDir)\_internal\PySide6\translations\qt_da.qm" />
+      </Component>
+      <Component Id="cmp_b3407bdcb902" Directory="dir_d4b4f7df41ed" Guid="{5B80428B-9FDE-55BB-BECD-B92935669F55}">
+        <File Id="fil_b3407bdcb902" Source="$(var.DistDir)\_internal\PySide6\translations\qt_de.qm" />
+      </Component>
+      <Component Id="cmp_05d3cd182f08" Directory="dir_d4b4f7df41ed" Guid="{1B225EAC-5E40-5A65-B65F-EE15C2ACADE1}">
+        <File Id="fil_05d3cd182f08" Source="$(var.DistDir)\_internal\PySide6\translations\qt_en.qm" />
+      </Component>
+      <Component Id="cmp_c4626ff51aba" Directory="dir_d4b4f7df41ed" Guid="{C38475FD-ADF7-512A-9EBE-4EF261751DD8}">
+        <File Id="fil_c4626ff51aba" Source="$(var.DistDir)\_internal\PySide6\translations\qt_es.qm" />
+      </Component>
+      <Component Id="cmp_0241daa550c6" Directory="dir_d4b4f7df41ed" Guid="{A4C8B11E-4E36-552F-B92A-A4A814862A40}">
+        <File Id="fil_0241daa550c6" Source="$(var.DistDir)\_internal\PySide6\translations\qt_fa.qm" />
+      </Component>
+      <Component Id="cmp_3c7b589e0c72" Directory="dir_d4b4f7df41ed" Guid="{7291574A-480A-5A60-B29C-D423317CEF9A}">
+        <File Id="fil_3c7b589e0c72" Source="$(var.DistDir)\_internal\PySide6\translations\qt_fi.qm" />
+      </Component>
+      <Component Id="cmp_991a637c9db2" Directory="dir_d4b4f7df41ed" Guid="{E2EA60DF-73D0-51B3-9D91-27D55F4F6F6C}">
+        <File Id="fil_991a637c9db2" Source="$(var.DistDir)\_internal\PySide6\translations\qt_fr.qm" />
+      </Component>
+      <Component Id="cmp_c69ffaec881b" Directory="dir_d4b4f7df41ed" Guid="{5126D6C6-A100-53C3-B6E9-B97F270031B2}">
+        <File Id="fil_c69ffaec881b" Source="$(var.DistDir)\_internal\PySide6\translations\qt_gd.qm" />
+      </Component>
+      <Component Id="cmp_8fb6c5894448" Directory="dir_d4b4f7df41ed" Guid="{6C063B00-342A-519C-A1FA-258B1BD91CDF}">
+        <File Id="fil_8fb6c5894448" Source="$(var.DistDir)\_internal\PySide6\translations\qt_gl.qm" />
+      </Component>
+      <Component Id="cmp_94e7dcaf8ba2" Directory="dir_d4b4f7df41ed" Guid="{48063821-13BE-55C2-899E-E60FA9343CFA}">
+        <File Id="fil_94e7dcaf8ba2" Source="$(var.DistDir)\_internal\PySide6\translations\qt_he.qm" />
+      </Component>
+      <Component Id="cmp_5aa7c019bf40" Directory="dir_d4b4f7df41ed" Guid="{42D31AC4-16EF-5216-AB50-5CF4F199559F}">
+        <File Id="fil_5aa7c019bf40" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_ar.qm" />
+      </Component>
+      <Component Id="cmp_249d86fb213d" Directory="dir_d4b4f7df41ed" Guid="{3BE36C2D-A101-57A9-AB83-C2BBA345F35D}">
+        <File Id="fil_249d86fb213d" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_bg.qm" />
+      </Component>
+      <Component Id="cmp_2fb1ecc0d7e7" Directory="dir_d4b4f7df41ed" Guid="{8E2DE9A4-9E7E-5478-9B13-A8E61C117222}">
+        <File Id="fil_2fb1ecc0d7e7" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_ca.qm" />
+      </Component>
+      <Component Id="cmp_e4ef3a8fae0c" Directory="dir_d4b4f7df41ed" Guid="{55080C87-911D-5E7D-914F-3D3448A911C1}">
+        <File Id="fil_e4ef3a8fae0c" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_cs.qm" />
+      </Component>
+      <Component Id="cmp_91ae87ac4e72" Directory="dir_d4b4f7df41ed" Guid="{AC48D7CF-2C42-525F-AD5E-5C730BFA35DB}">
+        <File Id="fil_91ae87ac4e72" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_da.qm" />
+      </Component>
+      <Component Id="cmp_339d7b58ad8a" Directory="dir_d4b4f7df41ed" Guid="{3731CC7A-A794-582D-AFD1-C99EA026D8A4}">
+        <File Id="fil_339d7b58ad8a" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_de.qm" />
+      </Component>
+      <Component Id="cmp_9b111ca5c419" Directory="dir_d4b4f7df41ed" Guid="{C46D1411-26D7-5F5F-A649-657F419A8141}">
+        <File Id="fil_9b111ca5c419" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_en.qm" />
+      </Component>
+      <Component Id="cmp_f8eae89cee9a" Directory="dir_d4b4f7df41ed" Guid="{3CD91090-A961-5931-B0B5-B377636ADEF4}">
+        <File Id="fil_f8eae89cee9a" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_es.qm" />
+      </Component>
+      <Component Id="cmp_d11c11732b5d" Directory="dir_d4b4f7df41ed" Guid="{EA7B9091-C19E-5363-BA5C-2288A74E55E1}">
+        <File Id="fil_d11c11732b5d" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_fr.qm" />
+      </Component>
+      <Component Id="cmp_87c8544e8f89" Directory="dir_d4b4f7df41ed" Guid="{C152EFA0-CA2F-58FA-B5F7-04EC35C2D773}">
+        <File Id="fil_87c8544e8f89" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_gl.qm" />
+      </Component>
+      <Component Id="cmp_5b26b946ddd8" Directory="dir_d4b4f7df41ed" Guid="{BC78970E-53F0-511C-A684-AF98F7CE72E9}">
+        <File Id="fil_5b26b946ddd8" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_hr.qm" />
+      </Component>
+      <Component Id="cmp_2e1219e22fd1" Directory="dir_d4b4f7df41ed" Guid="{1BDAA5BA-1442-5389-9639-926571551076}">
+        <File Id="fil_2e1219e22fd1" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_hu.qm" />
+      </Component>
+      <Component Id="cmp_dd0d37b60066" Directory="dir_d4b4f7df41ed" Guid="{AB01AFA8-386A-5BA4-BFC6-B3803C66C416}">
+        <File Id="fil_dd0d37b60066" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_it.qm" />
+      </Component>
+      <Component Id="cmp_3af113e188f0" Directory="dir_d4b4f7df41ed" Guid="{3BD2068F-7FE4-554C-A261-AC2DB3608DFB}">
+        <File Id="fil_3af113e188f0" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_ja.qm" />
+      </Component>
+      <Component Id="cmp_d5913699e14f" Directory="dir_d4b4f7df41ed" Guid="{8CFFDE27-D50D-5FBC-B920-52C3EC11D10A}">
+        <File Id="fil_d5913699e14f" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_ka.qm" />
+      </Component>
+      <Component Id="cmp_29b23a16d331" Directory="dir_d4b4f7df41ed" Guid="{162EB07E-3680-5863-A0D7-E0E90D8CCDA4}">
+        <File Id="fil_29b23a16d331" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_kk.qm" />
+      </Component>
+      <Component Id="cmp_2591b0bd8a38" Directory="dir_d4b4f7df41ed" Guid="{15268EFE-A3C8-5BD6-88EE-C268927AEEEB}">
+        <File Id="fil_2591b0bd8a38" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_ko.qm" />
+      </Component>
+      <Component Id="cmp_509453e13862" Directory="dir_d4b4f7df41ed" Guid="{D3B1FDD3-3C1A-5E37-A9A8-93DBD1151D11}">
+        <File Id="fil_509453e13862" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_nl.qm" />
+      </Component>
+      <Component Id="cmp_2cd4d2c6f150" Directory="dir_d4b4f7df41ed" Guid="{A5A2834B-29FF-5966-9F53-42436A848DEC}">
+        <File Id="fil_2cd4d2c6f150" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_nn.qm" />
+      </Component>
+      <Component Id="cmp_193fdece99e4" Directory="dir_d4b4f7df41ed" Guid="{507C0578-EFA0-5A12-A446-ECA8279EC08C}">
+        <File Id="fil_193fdece99e4" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_pl.qm" />
+      </Component>
+      <Component Id="cmp_cc37306154a4" Directory="dir_d4b4f7df41ed" Guid="{BC2E52B4-7848-5A52-AA44-F9A0C1656643}">
+        <File Id="fil_cc37306154a4" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_pt_BR.qm" />
+      </Component>
+      <Component Id="cmp_acad93cd28be" Directory="dir_d4b4f7df41ed" Guid="{D3C24F78-7810-5DC7-9AD7-19DD4C3DEA50}">
+        <File Id="fil_acad93cd28be" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_ru.qm" />
+      </Component>
+      <Component Id="cmp_dc0dba2103fb" Directory="dir_d4b4f7df41ed" Guid="{5033A312-230B-5F5E-8F65-A309B0B249F8}">
+        <File Id="fil_dc0dba2103fb" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_sk.qm" />
+      </Component>
+      <Component Id="cmp_e2e7d2de39da" Directory="dir_d4b4f7df41ed" Guid="{BB6833B0-42BC-5056-9158-18121AD05DD0}">
+        <File Id="fil_e2e7d2de39da" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_sl.qm" />
+      </Component>
+      <Component Id="cmp_1ca455ca6cdb" Directory="dir_d4b4f7df41ed" Guid="{9675CA60-C9C6-5B86-AC46-FE364E9CBD84}">
+        <File Id="fil_1ca455ca6cdb" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_sv.qm" />
+      </Component>
+      <Component Id="cmp_536227666bfc" Directory="dir_d4b4f7df41ed" Guid="{3187F0CE-5F25-5121-B466-28C4FAB76E76}">
+        <File Id="fil_536227666bfc" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_tr.qm" />
+      </Component>
+      <Component Id="cmp_864f1569b4ca" Directory="dir_d4b4f7df41ed" Guid="{BFD51CC5-DCC7-5C28-9D2C-45DCB724E36F}">
+        <File Id="fil_864f1569b4ca" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_uk.qm" />
+      </Component>
+      <Component Id="cmp_df8967c4dc84" Directory="dir_d4b4f7df41ed" Guid="{509D828C-E4DE-5865-95B7-F85F17292203}">
+        <File Id="fil_df8967c4dc84" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_zh_CN.qm" />
+      </Component>
+      <Component Id="cmp_f3d593446ef0" Directory="dir_d4b4f7df41ed" Guid="{6A934A3B-C67C-5B59-82FC-EBC8A0E8BD6A}">
+        <File Id="fil_f3d593446ef0" Source="$(var.DistDir)\_internal\PySide6\translations\qt_help_zh_TW.qm" />
+      </Component>
+      <Component Id="cmp_5ae5d252565c" Directory="dir_d4b4f7df41ed" Guid="{9C613181-CAC3-57EE-A747-45B1170BC06F}">
+        <File Id="fil_5ae5d252565c" Source="$(var.DistDir)\_internal\PySide6\translations\qt_hr.qm" />
+      </Component>
+      <Component Id="cmp_eb74aed6fad1" Directory="dir_d4b4f7df41ed" Guid="{0F2EB6D8-B8E3-53BD-8255-0AFCD09DD7CD}">
+        <File Id="fil_eb74aed6fad1" Source="$(var.DistDir)\_internal\PySide6\translations\qt_hu.qm" />
+      </Component>
+      <Component Id="cmp_7c0f4fdc0dd0" Directory="dir_d4b4f7df41ed" Guid="{B88C2315-CC52-5AF9-A553-46015ED5BDA9}">
+        <File Id="fil_7c0f4fdc0dd0" Source="$(var.DistDir)\_internal\PySide6\translations\qt_it.qm" />
+      </Component>
+      <Component Id="cmp_7802f7c81cb1" Directory="dir_d4b4f7df41ed" Guid="{4216D266-0E3E-5F77-B99E-52864212321E}">
+        <File Id="fil_7802f7c81cb1" Source="$(var.DistDir)\_internal\PySide6\translations\qt_ja.qm" />
+      </Component>
+      <Component Id="cmp_a4a5878b9c34" Directory="dir_d4b4f7df41ed" Guid="{D6FBB81C-9C17-5D2A-8851-AAB26DF22A4E}">
+        <File Id="fil_a4a5878b9c34" Source="$(var.DistDir)\_internal\PySide6\translations\qt_ka.qm" />
+      </Component>
+      <Component Id="cmp_d5c0a10564a9" Directory="dir_d4b4f7df41ed" Guid="{7F1C84C0-29A5-519D-B085-D9FA523F5A56}">
+        <File Id="fil_d5c0a10564a9" Source="$(var.DistDir)\_internal\PySide6\translations\qt_kk.qm" />
+      </Component>
+      <Component Id="cmp_d43d7ebfca43" Directory="dir_d4b4f7df41ed" Guid="{0B915764-C594-5AF6-8BA9-F8879524E66C}">
+        <File Id="fil_d43d7ebfca43" Source="$(var.DistDir)\_internal\PySide6\translations\qt_ko.qm" />
+      </Component>
+      <Component Id="cmp_792058970ffc" Directory="dir_d4b4f7df41ed" Guid="{416DF904-336C-5FD8-89FE-B242401C3FB1}">
+        <File Id="fil_792058970ffc" Source="$(var.DistDir)\_internal\PySide6\translations\qt_lg.qm" />
+      </Component>
+      <Component Id="cmp_92270c7e741c" Directory="dir_d4b4f7df41ed" Guid="{75AFAF77-4F5F-5968-B986-B94BEE47D1E9}">
+        <File Id="fil_92270c7e741c" Source="$(var.DistDir)\_internal\PySide6\translations\qt_lt.qm" />
+      </Component>
+      <Component Id="cmp_d18c28859361" Directory="dir_d4b4f7df41ed" Guid="{D2B3B938-8B6B-51C6-B921-4268D00E0E43}">
+        <File Id="fil_d18c28859361" Source="$(var.DistDir)\_internal\PySide6\translations\qt_lv.qm" />
+      </Component>
+      <Component Id="cmp_43c74c2cff9e" Directory="dir_d4b4f7df41ed" Guid="{8E38DACE-A4C8-55B9-8184-D2EE74789BFE}">
+        <File Id="fil_43c74c2cff9e" Source="$(var.DistDir)\_internal\PySide6\translations\qt_nl.qm" />
+      </Component>
+      <Component Id="cmp_506b203c4bc8" Directory="dir_d4b4f7df41ed" Guid="{94611DC5-6848-5F78-83F2-3DCBC4FCE639}">
+        <File Id="fil_506b203c4bc8" Source="$(var.DistDir)\_internal\PySide6\translations\qt_nn.qm" />
+      </Component>
+      <Component Id="cmp_b138e99b3717" Directory="dir_d4b4f7df41ed" Guid="{11E0B351-610D-5A8E-B760-5F453B929C68}">
+        <File Id="fil_b138e99b3717" Source="$(var.DistDir)\_internal\PySide6\translations\qt_pl.qm" />
+      </Component>
+      <Component Id="cmp_373d98a4baca" Directory="dir_d4b4f7df41ed" Guid="{E9240F0C-3A5E-5386-AA34-5E37DC4CA315}">
+        <File Id="fil_373d98a4baca" Source="$(var.DistDir)\_internal\PySide6\translations\qt_pt_BR.qm" />
+      </Component>
+      <Component Id="cmp_f8835ba52089" Directory="dir_d4b4f7df41ed" Guid="{F9C9C3C9-45F4-53E7-839F-CA2CE69540CC}">
+        <File Id="fil_f8835ba52089" Source="$(var.DistDir)\_internal\PySide6\translations\qt_pt_PT.qm" />
+      </Component>
+      <Component Id="cmp_d6e7225f5da5" Directory="dir_d4b4f7df41ed" Guid="{3D7C9526-9C70-5ABE-9C81-42B4EEE4EE0C}">
+        <File Id="fil_d6e7225f5da5" Source="$(var.DistDir)\_internal\PySide6\translations\qt_ru.qm" />
+      </Component>
+      <Component Id="cmp_fa1de15b4d26" Directory="dir_d4b4f7df41ed" Guid="{91E3E746-531C-5BE7-BECD-5BFA0B12C00C}">
+        <File Id="fil_fa1de15b4d26" Source="$(var.DistDir)\_internal\PySide6\translations\qt_sk.qm" />
+      </Component>
+      <Component Id="cmp_6696b3d0e640" Directory="dir_d4b4f7df41ed" Guid="{5D646C60-0553-518D-B908-E836C3B8487A}">
+        <File Id="fil_6696b3d0e640" Source="$(var.DistDir)\_internal\PySide6\translations\qt_sl.qm" />
+      </Component>
+      <Component Id="cmp_c50573dd9f69" Directory="dir_d4b4f7df41ed" Guid="{702D889A-2493-5A90-A300-B1E01DE6DF7C}">
+        <File Id="fil_c50573dd9f69" Source="$(var.DistDir)\_internal\PySide6\translations\qt_sv.qm" />
+      </Component>
+      <Component Id="cmp_49207018e758" Directory="dir_d4b4f7df41ed" Guid="{115192D1-04E9-5EFC-A7B7-4A3EDA03D281}">
+        <File Id="fil_49207018e758" Source="$(var.DistDir)\_internal\PySide6\translations\qt_tr.qm" />
+      </Component>
+      <Component Id="cmp_d68b13e8389a" Directory="dir_d4b4f7df41ed" Guid="{96DF02D7-DE0E-59EE-BDA3-CF15EF33075F}">
+        <File Id="fil_d68b13e8389a" Source="$(var.DistDir)\_internal\PySide6\translations\qt_uk.qm" />
+      </Component>
+      <Component Id="cmp_3d806057d86e" Directory="dir_d4b4f7df41ed" Guid="{A415E38A-F98D-550A-B97C-87348AE7E231}">
+        <File Id="fil_3d806057d86e" Source="$(var.DistDir)\_internal\PySide6\translations\qt_zh_CN.qm" />
+      </Component>
+      <Component Id="cmp_0913827c14a2" Directory="dir_d4b4f7df41ed" Guid="{ECF4C631-26C9-5505-9B1E-AB649C63D2B7}">
+        <File Id="fil_0913827c14a2" Source="$(var.DistDir)\_internal\PySide6\translations\qt_zh_TW.qm" />
+      </Component>
+      <Component Id="cmp_197a196ee451" Directory="dir_d4b4f7df41ed" Guid="{84CA0BC4-9132-5C46-9CB7-0262730D7701}">
+        <File Id="fil_197a196ee451" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_ar.qm" />
+      </Component>
+      <Component Id="cmp_72cb379f7bf7" Directory="dir_d4b4f7df41ed" Guid="{5A2CD0E9-4D29-5A1E-AE21-6FEEB2F2F9A6}">
+        <File Id="fil_72cb379f7bf7" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_bg.qm" />
+      </Component>
+      <Component Id="cmp_51962b8f9a93" Directory="dir_d4b4f7df41ed" Guid="{D68C0191-1701-55B5-AA13-0B2FDA29CE8E}">
+        <File Id="fil_51962b8f9a93" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_ca.qm" />
+      </Component>
+      <Component Id="cmp_21152d371ac7" Directory="dir_d4b4f7df41ed" Guid="{CF4220C8-9950-50A9-B4C4-2ECF4A35BCB1}">
+        <File Id="fil_21152d371ac7" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_cs.qm" />
+      </Component>
+      <Component Id="cmp_7ea82e6f8a05" Directory="dir_d4b4f7df41ed" Guid="{DD5825B4-9C58-5880-90D2-7C9A1F676132}">
+        <File Id="fil_7ea82e6f8a05" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_da.qm" />
+      </Component>
+      <Component Id="cmp_8917f7c53ff5" Directory="dir_d4b4f7df41ed" Guid="{2B050A07-BBF2-59AB-9853-02F21E26F346}">
+        <File Id="fil_8917f7c53ff5" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_de.qm" />
+      </Component>
+      <Component Id="cmp_e5e37557060b" Directory="dir_d4b4f7df41ed" Guid="{19A58A1F-57BF-58EF-B012-18076135722F}">
+        <File Id="fil_e5e37557060b" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_en.qm" />
+      </Component>
+      <Component Id="cmp_c4ef83f143cc" Directory="dir_d4b4f7df41ed" Guid="{6F4AB532-7EF0-513F-9C58-06213400BDB3}">
+        <File Id="fil_c4ef83f143cc" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_es.qm" />
+      </Component>
+      <Component Id="cmp_1fe44293b0d1" Directory="dir_d4b4f7df41ed" Guid="{6721431F-2D92-51CA-876C-82BD7DC2EE62}">
+        <File Id="fil_1fe44293b0d1" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_fa.qm" />
+      </Component>
+      <Component Id="cmp_6ebbb5fddbec" Directory="dir_d4b4f7df41ed" Guid="{B1B64E2D-8D0D-5547-A07D-98028F0D10C9}">
+        <File Id="fil_6ebbb5fddbec" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_fi.qm" />
+      </Component>
+      <Component Id="cmp_495326248d62" Directory="dir_d4b4f7df41ed" Guid="{1D9398D3-6DF5-59F2-800D-DB839C3ED01E}">
+        <File Id="fil_495326248d62" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_fr.qm" />
+      </Component>
+      <Component Id="cmp_615e83995c34" Directory="dir_d4b4f7df41ed" Guid="{CE74CCF2-39A0-5FC9-BC5C-28BDB1E80032}">
+        <File Id="fil_615e83995c34" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_gd.qm" />
+      </Component>
+      <Component Id="cmp_9be13827b307" Directory="dir_d4b4f7df41ed" Guid="{6FE8D800-0C29-519D-B132-2A10D6B95914}">
+        <File Id="fil_9be13827b307" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_he.qm" />
+      </Component>
+      <Component Id="cmp_59dac39d227e" Directory="dir_d4b4f7df41ed" Guid="{CDC985B3-2961-55FB-B164-4CB49DBE9B7F}">
+        <File Id="fil_59dac39d227e" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_hr.qm" />
+      </Component>
+      <Component Id="cmp_7c73587f2dc9" Directory="dir_d4b4f7df41ed" Guid="{F86896F0-2785-515A-BEF6-6ABC624EDABD}">
+        <File Id="fil_7c73587f2dc9" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_hu.qm" />
+      </Component>
+      <Component Id="cmp_99224f586fc9" Directory="dir_d4b4f7df41ed" Guid="{09E09554-1BA3-587D-90DB-233DC64DDE75}">
+        <File Id="fil_99224f586fc9" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_it.qm" />
+      </Component>
+      <Component Id="cmp_60e77bbc5743" Directory="dir_d4b4f7df41ed" Guid="{18327B70-39C9-5198-9A0A-7B3150A51125}">
+        <File Id="fil_60e77bbc5743" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_ja.qm" />
+      </Component>
+      <Component Id="cmp_e4bf8066c39c" Directory="dir_d4b4f7df41ed" Guid="{DF8510B2-5941-5DA7-9032-61D7FF55C78E}">
+        <File Id="fil_e4bf8066c39c" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_ka.qm" />
+      </Component>
+      <Component Id="cmp_50f7e1b5f9b3" Directory="dir_d4b4f7df41ed" Guid="{F71DE81A-3F5E-5B98-B381-FE07683211F8}">
+        <File Id="fil_50f7e1b5f9b3" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_kk.qm" />
+      </Component>
+      <Component Id="cmp_c717c602c0f7" Directory="dir_d4b4f7df41ed" Guid="{282B9860-9A11-553D-A9B6-A52FF039D93A}">
+        <File Id="fil_c717c602c0f7" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_ko.qm" />
+      </Component>
+      <Component Id="cmp_459f69c8d712" Directory="dir_d4b4f7df41ed" Guid="{83806052-F9B1-58C8-B372-8099AC5C2CAE}">
+        <File Id="fil_459f69c8d712" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_lg.qm" />
+      </Component>
+      <Component Id="cmp_23ec1dddb871" Directory="dir_d4b4f7df41ed" Guid="{D869777D-0ECB-5C22-832D-F585EFEACEC7}">
+        <File Id="fil_23ec1dddb871" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_lv.qm" />
+      </Component>
+      <Component Id="cmp_ced5f6bfb775" Directory="dir_d4b4f7df41ed" Guid="{0C5369D0-DAE6-57B3-91A1-86D4F9B664CA}">
+        <File Id="fil_ced5f6bfb775" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_nl.qm" />
+      </Component>
+      <Component Id="cmp_fb68014744ac" Directory="dir_d4b4f7df41ed" Guid="{9D6AEB26-5BD3-51BB-8146-F5D47D2F8D6E}">
+        <File Id="fil_fb68014744ac" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_nn.qm" />
+      </Component>
+      <Component Id="cmp_44062b782a63" Directory="dir_d4b4f7df41ed" Guid="{876A0630-5E67-5C08-B12E-895371BEADDF}">
+        <File Id="fil_44062b782a63" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_pl.qm" />
+      </Component>
+      <Component Id="cmp_33e5fbfcf066" Directory="dir_d4b4f7df41ed" Guid="{8F53124E-26A1-5667-98A1-C29DE1997925}">
+        <File Id="fil_33e5fbfcf066" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_pt_BR.qm" />
+      </Component>
+      <Component Id="cmp_3a1ebcd927d9" Directory="dir_d4b4f7df41ed" Guid="{44EEF10D-E542-504E-97AF-94945E26ECE5}">
+        <File Id="fil_3a1ebcd927d9" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_ru.qm" />
+      </Component>
+      <Component Id="cmp_f1c4722ad3f7" Directory="dir_d4b4f7df41ed" Guid="{85F575AB-1E05-569F-B9EE-BB6415FA9995}">
+        <File Id="fil_f1c4722ad3f7" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_sk.qm" />
+      </Component>
+      <Component Id="cmp_69f46058a1dd" Directory="dir_d4b4f7df41ed" Guid="{6BD9C2D6-B967-5EE9-BFB1-920BE955550F}">
+        <File Id="fil_69f46058a1dd" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_sv.qm" />
+      </Component>
+      <Component Id="cmp_d9e35356b1ee" Directory="dir_d4b4f7df41ed" Guid="{51DFA828-3321-543A-9DA5-C9E1E0C8EA36}">
+        <File Id="fil_d9e35356b1ee" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_tr.qm" />
+      </Component>
+      <Component Id="cmp_6f9812a2c278" Directory="dir_d4b4f7df41ed" Guid="{849CBC02-6C55-5AB7-9E8B-DB0B688A4DB7}">
+        <File Id="fil_6f9812a2c278" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_uk.qm" />
+      </Component>
+      <Component Id="cmp_d07a1ac44754" Directory="dir_d4b4f7df41ed" Guid="{6D9CC838-20C1-5A07-9353-962E2C9A2888}">
+        <File Id="fil_d07a1ac44754" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_zh_CN.qm" />
+      </Component>
+      <Component Id="cmp_caceaa2ca774" Directory="dir_d4b4f7df41ed" Guid="{EB359B6C-F22D-5DA7-AAD7-82995E0D7CDC}">
+        <File Id="fil_caceaa2ca774" Source="$(var.DistDir)\_internal\PySide6\translations\qtbase_zh_TW.qm" />
+      </Component>
+      <Component Id="cmp_486a3ece695d" Directory="dir_fcc78b2892e8" Guid="{F290EC05-DF2D-5251-A2AD-A545024A4D0F}">
+        <File Id="fil_486a3ece695d" Source="$(var.DistDir)\_internal\PySide6\VCRUNTIME140.dll" />
+      </Component>
+      <Component Id="cmp_fd539e340d22" Directory="dir_fcc78b2892e8" Guid="{63ED633E-A8C5-53B3-9B41-C8202432EEBE}">
+        <File Id="fil_fd539e340d22" Source="$(var.DistDir)\_internal\PySide6\VCRUNTIME140_1.dll" />
+      </Component>
+      <Component Id="cmp_32e775f915ec" Directory="dir_2f509b15f652" Guid="{5A57CC74-1698-51AC-9203-8D989F89E8BB}">
+        <File Id="fil_32e775f915ec" Source="$(var.DistDir)\_internal\python3.dll" />
+      </Component>
+      <Component Id="cmp_db84b8994c82" Directory="dir_2f509b15f652" Guid="{C992A280-59F0-5377-B322-6F89E9F4899F}">
+        <File Id="fil_db84b8994c82" Source="$(var.DistDir)\_internal\python312.dll" />
+      </Component>
+      <Component Id="cmp_c0008ae23c8a" Directory="dir_2f509b15f652" Guid="{65726028-3DDE-5604-92D5-2F03C1FC6B01}">
+        <File Id="fil_c0008ae23c8a" Source="$(var.DistDir)\_internal\select.pyd" />
+      </Component>
+      <Component Id="cmp_1661a08ff842" Directory="dir_d23499fdb7f3" Guid="{42C4F0E5-4D33-5B5F-B054-F4F46F1A979F}">
+        <File Id="fil_1661a08ff842" Source="$(var.DistDir)\_internal\shiboken6\MSVCP140.dll" />
+      </Component>
+      <Component Id="cmp_1d222f0aaa25" Directory="dir_d23499fdb7f3" Guid="{2695A5B1-421C-5983-B882-16607782630E}">
+        <File Id="fil_1d222f0aaa25" Source="$(var.DistDir)\_internal\shiboken6\Shiboken.pyd" />
+      </Component>
+      <Component Id="cmp_c3cfab6737e8" Directory="dir_d23499fdb7f3" Guid="{5368591F-5A58-5007-9FDB-FE03D8C0E534}">
+        <File Id="fil_c3cfab6737e8" Source="$(var.DistDir)\_internal\shiboken6\shiboken6.abi3.dll" />
+      </Component>
+      <Component Id="cmp_77371044f5b6" Directory="dir_d23499fdb7f3" Guid="{47DA009F-BFE9-52F4-B3E7-3499E2CE2DEA}">
+        <File Id="fil_77371044f5b6" Source="$(var.DistDir)\_internal\shiboken6\VCRUNTIME140.dll" />
+      </Component>
+      <Component Id="cmp_288e6f2e35a1" Directory="dir_d23499fdb7f3" Guid="{BD737BE4-6784-506A-BF6D-8EC27F956333}">
+        <File Id="fil_288e6f2e35a1" Source="$(var.DistDir)\_internal\shiboken6\VCRUNTIME140_1.dll" />
+      </Component>
+      <Component Id="cmp_0f9cafc9c6dd" Directory="dir_2f509b15f652" Guid="{7BC670AF-60AC-5B24-93F6-A1B9FFB9758F}">
+        <File Id="fil_0f9cafc9c6dd" Source="$(var.DistDir)\_internal\sqlite3.dll" />
+      </Component>
+      <Component Id="cmp_a279aa16a0a8" Directory="dir_2f509b15f652" Guid="{A53F6B04-BC1A-5A6E-AA72-6105D854010D}">
+        <File Id="fil_a279aa16a0a8" Source="$(var.DistDir)\_internal\unicodedata.pyd" />
+      </Component>
+      <Component Id="cmp_66b9fe24d045" Directory="dir_2f509b15f652" Guid="{EF5E7DA5-D7A9-5CD9-96D2-AD36F550A416}">
+        <File Id="fil_66b9fe24d045" Source="$(var.DistDir)\_internal\VCRUNTIME140.dll" />
+      </Component>
+      <Component Id="cmp_f6d74800c221" Directory="dir_2f509b15f652" Guid="{7ADDEE35-0068-5FB0-A30A-3012D707474F}">
+        <File Id="fil_f6d74800c221" Source="$(var.DistDir)\_internal\VCRUNTIME140_1.dll" />
+      </Component>
+      <Component Id="cmp_04e336f57b00" Directory="dir_2f509b15f652" Guid="{DD9D83AA-85CD-5741-A759-4D6C63A6A12D}">
+        <File Id="fil_04e336f57b00" Source="$(var.DistDir)\_internal\winsound.pyd" />
+      </Component>
+      <Component Id="MainExecutableComponent" Directory="INSTALLFOLDER" Guid="{84AEA5BC-7EF2-595D-8943-DF8DD88AA948}">
+        <File Id="TextPicStudioExe" Source="$(var.DistDir)\TextPicStudio.exe" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

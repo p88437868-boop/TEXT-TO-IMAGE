@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+  <Package
+      Name="TextPic Studio"
+      Manufacturer="TextPic Studio"
+      Version="1.0.3"
+      Language="1033"
+      UpgradeCode="2E4E1D3D-2A18-4F7F-9B0E-5C3F1E8A7B21"
+      Scope="perMachine"
+      InstallerVersion="500"
+      Compressed="yes">
+
+    <SummaryInformation
+        Description="TextPic Studio — message image studio"
+        Manufacturer="TextPic Studio" />
+
+    <MajorUpgrade
+        DowngradeErrorMessage="A newer version of [ProductName] is already installed."
+        Schedule="afterInstallInitialize" />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Icon Id="AppIcon.ico" SourceFile="$(var.RootDir)assets\app.ico" />
+    <Property Id="ARPPRODUCTICON" Value="AppIcon.ico" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch TextPic Studio" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1" />
+    <Property Id="AUTOSTART" Value="0" Secure="yes" />
+
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.RootDir)installer\license.rtf" />
+    <WixVariable Id="WixUIBannerBmp" Value="$(var.RootDir)installer\banner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="$(var.RootDir)installer\dialog.bmp" />
+
+    <Property Id="WINDOWS_BUILD">
+      <RegistrySearch Id="WindowsBuildSearch" Root="HKLM" Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion" Name="CurrentBuildNumber" Type="raw" />
+    </Property>
+
+    <Launch Condition="VersionNT64" Message="TextPic Studio requires 64-bit Windows." />
+    <Launch Condition="WINDOWS_BUILD &gt;= 17763" Message="TextPic Studio requires Windows 10 version 1809 or later." />
+
+    <Feature Id="MainFeature" Title="TextPic Studio" Level="1" AllowAbsent="no">
+      <ComponentGroupRef Id="AppFiles" />
+      <ComponentRef Id="DesktopShortcut" />
+      <ComponentRef Id="StartMenuShortcut" />
+      <ComponentRef Id="AppPathRegistration" />
+    </Feature>
+
+    <Component Id="DesktopShortcut" Directory="DesktopFolder" Guid="{3B8E39FD-716A-4BC0-B7C1-8F8F4F4B0D71}">
+      <Shortcut
+          Id="DesktopShortcut"
+          Name="TextPic Studio"
+          Description="Message image studio"
+          Target="[INSTALLFOLDER]TextPicStudio.exe"
+          WorkingDirectory="INSTALLFOLDER"
+          Icon="AppIcon.ico" />
+      <RegistryValue Root="HKLM" Key="Software\TextPic Studio" Name="DesktopShortcut" Type="integer" Value="1" KeyPath="yes" />
+    </Component>
+
+    <Component Id="StartMenuShortcut" Directory="ProgramMenuDir" Guid="{2BB72CA4-29B4-4FD5-8B44-1D797A6CF292}">
+      <Shortcut
+          Id="StartMenuShortcut"
+          Name="TextPic Studio"
+          Description="Message image studio"
+          Target="[INSTALLFOLDER]TextPicStudio.exe"
+          WorkingDirectory="INSTALLFOLDER"
+          Icon="AppIcon.ico" />
+      <RemoveFolder Id="RemoveProgramMenuDir" On="uninstall" />
+      <RegistryValue Root="HKLM" Key="Software\TextPic Studio" Name="StartMenuShortcut" Type="integer" Value="1" KeyPath="yes" />
+    </Component>
+
+    <Component Id="AppPathRegistration" Directory="INSTALLFOLDER" Guid="{6EC5EB55-9E9A-45DC-97AD-3B8BDBF6E756}">
+      <RegistryKey Root="HKLM" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\TextPicStudio.exe">
+        <RegistryValue Type="string" Value="[INSTALLFOLDER]TextPicStudio.exe" KeyPath="yes" />
+        <RegistryValue Name="Path" Type="string" Value="[INSTALLFOLDER]" />
+      </RegistryKey>
+    </Component>
+
+    <CustomAction
+        Id="LaunchApplication"
+        FileRef="TextPicStudioExe"
+        ExeCommand=""
+        Return="asyncNoWait" />
+    <CustomAction
+        Id="EnableAutostart"
+        FileRef="TextPicStudioExe"
+        ExeCommand="--enable-autostart"
+        Execute="deferred"
+        Impersonate="yes"
+        Return="ignore" />
+    <CustomAction
+        Id="DisableAutostart"
+        FileRef="TextPicStudioExe"
+        ExeCommand="--disable-autostart"
+        Execute="deferred"
+        Impersonate="yes"
+        Return="ignore" />
+
+    <InstallExecuteSequence>
+      <Custom Action="EnableAutostart" After="InstallFiles" Condition="AUTOSTART = 1 AND NOT Installed" />
+      <Custom Action="DisableAutostart" Before="RemoveFiles" Condition="REMOVE = &quot;ALL&quot; AND NOT UPGRADINGPRODUCTCODE" />
+    </InstallExecuteSequence>
+
+    <UIRef Id="TextPicUI" />
+  </Package>
+
+  <Fragment>
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="TextPic Studio" />
+    </StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ProgramMenuDir" Name="TextPic Studio" />
+    </StandardDirectory>
+    <StandardDirectory Id="DesktopFolder" />
+  </Fragment>
+
+  <Fragment>
+    <UI Id="TextPicUI">
+      <ui:WixUI Id="WixUI_InstallDir" InstallDirectory="INSTALLFOLDER" />
+      <Publish
+          Dialog="ExitDialog"
+          Control="Finish"
+          Event="DoAction"
+          Value="LaunchApplication"
+          Condition="WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 AND NOT Installed" />
+    </UI>
+  </Fragment>
+</Wix>

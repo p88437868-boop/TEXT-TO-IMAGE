@@ -1,0 +1,17 @@
+[project]
+name = "textpic-studio"
+version = "1.0.3"
+description = "Render chat messages as Messenger-style images and paste them with a global hotkey."
+requires-python = "==3.12.*"
+dependencies = [
+    "PySide6==6.12.0",
+    "Pillow==13.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src"]
+
+[tool.pyinstaller]
+name = "TextPicStudio"
